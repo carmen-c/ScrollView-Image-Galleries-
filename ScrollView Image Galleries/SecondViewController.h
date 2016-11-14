@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  SecondViewController.h
 //  ScrollView Image Galleries
 //
 //  Created by carmen cheng on 2016-11-14.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController 
-
+@interface SecondViewController : UIViewController 
 
 @end
-

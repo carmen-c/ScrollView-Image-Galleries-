@@ -8,7 +8,10 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <UIScrollViewDelegate>
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) UIImageView *pictureImageView;
+@property (nonatomic, readonly) NSArray<UIImage *> *images;
 
 @end
 
@@ -16,13 +19,33 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    CGFloat imageXPosition = 0;
+    
+    CGFloat scrollViewWidth = CGRectGetWidth(self.view.frame);
+    CGFloat scrollViewHeight = CGRectGetHeight(self.scrollView.frame);
+    
+    for (UIImage *image in self.images) {
+        UIImageView *imageView = [[UIImageView alloc]initWithImage:image];
+        
+        imageView.frame = CGRectMake(imageXPosition, 0, scrollViewWidth, scrollViewHeight);
+        imageView.contentMode = UIViewContentModeScaleAspectFit;
+        
+        [self.scrollView addSubview:imageView];
+        
+        imageXPosition += scrollViewWidth;
+    }
+    
+    self.scrollView.contentSize = CGSizeMake(scrollViewWidth*self.images.count, scrollViewHeight);
+    
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(NSArray<UIImage *> *) images{
+    return @[
+             [UIImage imageNamed:@"Lighthouse-in-Field"],
+             [UIImage imageNamed:@"Lighthouse-night"],
+             [UIImage imageNamed:@"Lighthouse-zoomed"],
+             ];
 }
 
 
