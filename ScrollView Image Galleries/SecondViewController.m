@@ -28,6 +28,7 @@
 }
 
 -(void)zoomAndPanImage {
+    self.imageView.image = self.image;
     [self.scrollView addSubview:self.imageView];
     self.scrollView.contentSize = self.imageView.bounds.size;
     self.scrollView.minimumZoomScale = 0.5;

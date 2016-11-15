@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1W5-qR-2UK">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -21,25 +21,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="4xh-Kf-P0o">
+                                <rect key="frame" x="168" y="622" width="39" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="39" id="Q84-i1-7lc"/>
+                                    <constraint firstAttribute="height" constant="37" id="pQ9-Qp-cJ5"/>
+                                </constraints>
+                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="currentPageIndicatorTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="pageControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="FMP-o8-xx0"/>
+                                </connections>
+                            </pageControl>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iCv-l1-Dsq">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <gestureRecognizers/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="iCv-l1-Dsq" secondAttribute="bottom" id="53w-qf-irG"/>
+                            <constraint firstItem="4xh-Kf-P0o" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KVR-6x-qTP"/>
                             <constraint firstItem="iCv-l1-Dsq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="KeY-O2-HDN"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4xh-Kf-P0o" secondAttribute="bottom" constant="8" id="ViB-5J-W9K"/>
                             <constraint firstAttribute="trailing" secondItem="iCv-l1-Dsq" secondAttribute="trailing" id="dFg-hx-dDr"/>
                             <constraint firstItem="iCv-l1-Dsq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="eAs-4g-dCS"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="9zu-k6-2cv"/>
                     <connections>
+                        <outlet property="pageControl" destination="4xh-Kf-P0o" id="fv9-rd-E3P"/>
                         <outlet property="scrollView" destination="iCv-l1-Dsq" id="xKp-ly-QAT"/>
+                        <segue destination="PZI-5p-jFc" kind="show" identifier="showDetail" id="Kzm-Db-hbG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="136.28185907046478"/>
+            <point key="canvasLocation" x="1520.8" y="139.880059970015"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="kbd-rN-7OG">
@@ -53,10 +71,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Erx-gZ-aWI">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Erx-gZ-aWI">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
-                                    <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Lighthouse-night" translatesAutoresizingMaskIntoConstraints="NO" id="GRI-5Q-uon">
+                                    <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GRI-5Q-uon">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                     </imageView>
                                 </subviews>
@@ -83,10 +101,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RmF-1i-diJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1391" y="136"/>
+            <point key="canvasLocation" x="2328.8000000000002" y="135.38230884557723"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Dfj-aS-iew">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1W5-qR-2UK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ru8-US-XCZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="7z3-te-Pm4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="37W-DB-eCc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="581.60000000000002" y="139.880059970015"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Lighthouse-night" width="800" height="600"/>
-    </resources>
 </document>
