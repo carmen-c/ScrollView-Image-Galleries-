@@ -44,7 +44,6 @@
     }
     self.scrollView.contentSize = CGSizeMake(scrollViewWidth*self.images.count, scrollViewHeight);
     
-    [self.scrollView setPagingEnabled:YES];
     self.scrollView.delegate = self;
 }
 
