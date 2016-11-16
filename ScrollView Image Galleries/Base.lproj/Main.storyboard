@@ -71,23 +71,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Erx-gZ-aWI">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Erx-gZ-aWI">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
-                                    <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GRI-5Q-uon">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                    <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GRI-5Q-uon">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="GRI-5Q-uon" secondAttribute="bottom" id="LEQ-06-79y"/>
                                     <constraint firstAttribute="trailing" secondItem="GRI-5Q-uon" secondAttribute="trailing" id="Nwu-fF-CGh"/>
                                     <constraint firstItem="GRI-5Q-uon" firstAttribute="leading" secondItem="Erx-gZ-aWI" secondAttribute="leading" id="VVb-dT-gvA"/>
+                                    <constraint firstItem="GRI-5Q-uon" firstAttribute="centerX" secondItem="Erx-gZ-aWI" secondAttribute="centerX" id="c3I-Rb-Br9"/>
+                                    <constraint firstItem="GRI-5Q-uon" firstAttribute="centerY" secondItem="Erx-gZ-aWI" secondAttribute="centerY" id="lC0-IA-q16"/>
                                     <constraint firstItem="GRI-5Q-uon" firstAttribute="top" secondItem="Erx-gZ-aWI" secondAttribute="top" id="zh7-pX-Run"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Erx-gZ-aWI" firstAttribute="leading" secondItem="7mY-h8-vb4" secondAttribute="leading" id="2H0-Tv-ec5"/>
+                            <constraint firstAttribute="trailing" secondItem="Erx-gZ-aWI" secondAttribute="trailing" id="EXv-h6-f43"/>
+                            <constraint firstItem="Erx-gZ-aWI" firstAttribute="top" secondItem="blL-6D-srI" secondAttribute="bottom" id="GET-mb-b4J"/>
+                            <constraint firstItem="Qxh-d9-TBa" firstAttribute="top" secondItem="Erx-gZ-aWI" secondAttribute="bottom" id="JCP-lt-V1G"/>
                             <constraint firstItem="Erx-gZ-aWI" firstAttribute="leading" secondItem="7mY-h8-vb4" secondAttribute="leading" id="jOc-t2-aji"/>
                             <constraint firstItem="Qxh-d9-TBa" firstAttribute="top" secondItem="Erx-gZ-aWI" secondAttribute="bottom" id="kp5-Ld-1cV"/>
                             <constraint firstItem="Erx-gZ-aWI" firstAttribute="top" secondItem="blL-6D-srI" secondAttribute="bottom" id="npC-gK-aqh"/>
